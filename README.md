@@ -10,7 +10,11 @@ Add this as middleware in your main.go:
 funcServer.AddRootMiddleware(&dns.Middleware{})
 ```
 
-Point a wildcard domain at your hosted server.
+Then add a wildcard domain to your DNS provider that points to your Fn Server/Cluster:
+
+```
+*.mydomain.com -> myhosted.fn.url.com
+```
 
 ## TODO
 
