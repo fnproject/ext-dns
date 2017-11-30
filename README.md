@@ -1,13 +1,13 @@
 # DNS Extension for Fn
 
-A DNS extension to support nice domains on Fn.
+A DNS extension to support nice domains on [Fn](https://fnproject.io).
 
 ## Usage
 
-Add this as middleware
+Add this as middleware in your main.go:
 
 ```go
-TODO:
+funcServer.AddRootMiddleware(&dns.Middleware{})
 ```
 
 Point a wildcard domain at your hosted server.

@@ -4,7 +4,7 @@ import (
 	"context"
 
 	"github.com/fnproject/fn/api/server"
-	"github.com/treeder/fn-ext-cloudflare"
+	"github.com/treeder/fn-ext-dns"
 )
 
 func main() {
