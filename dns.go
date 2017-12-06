@@ -8,8 +8,33 @@ import (
 	"os"
 	"strings"
 
+	"github.com/fnproject/fn/api/server"
 	"github.com/fnproject/fn/fnext"
 )
+
+func init() {
+	server.RegisterExtension(&Dns{})
+}
+
+const (
+	EnvAPIHost = "API_HOST"
+)
+
+type Dns struct {
+}
+
+func (e *Dns) Name() string {
+	return "github.com/treeder/fn-ext-dns"
+}
+
+func (e *Dns) Setup(s fnext.ExtServer) error {
+	fmt.Println("SETTING UP DNS")
+	if os.Getenv(EnvAPIHost) == "" {
+		return fmt.Errorf("%s env var is required for dns extension", EnvAPIHost)
+	}
+	s.AddRootMiddleware(&Middleware{})
+	return nil
+}
 
 type Middleware struct {
 }

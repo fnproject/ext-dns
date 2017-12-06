@@ -4,16 +4,16 @@ A DNS extension to support nice domains on [Fn](https://fnproject.io).
 
 ## Usage
 
-Add this as middleware in your main.go:
+First build a custom Fn image by adding this to your ext.yaml:
 
-```go
-funcServer.AddRootMiddleware(&dns.Middleware{})
-```
+`github.com/treeder/fn-ext-dns`
+
+See: https://github.com/fnproject/fn/blob/master/docs/operating/extending.md for how to build a custom image.
 
 Then add a wildcard domain to your DNS provider that points to your Fn Server/Cluster:
 
-```
-*.mydomain.com -> myhosted.fn.url.com
+```txt
+*.mydomain.com -> myservers.fn.domain.com
 ```
 
 ## TODO
@@ -33,7 +33,7 @@ Start server with the DNS middleware:
 ```sh
 cd main
 export API_HOST=localhost,myapp.local.com
-go build && ./main
+go run main.go
 ```
 
 In another window:

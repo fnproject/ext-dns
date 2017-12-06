@@ -9,10 +9,7 @@ import (
 
 func main() {
 	ctx := context.Background()
-
 	funcServer := server.NewFromEnv(ctx)
-
-	funcServer.AddRootMiddleware(&dns.Middleware{})
-
+	funcServer.AddExtension(&dns.Dns{})
 	funcServer.Start(ctx)
 }
