@@ -6,7 +6,7 @@ A DNS extension to support nice domains on [Fn](https://fnproject.io).
 
 First build a custom Fn image by adding this to your ext.yaml:
 
-`github.com/treeder/fn-ext-dns`
+`github.com/fnproject/ext-dns`
 
 See: https://github.com/fnproject/fn/blob/master/docs/operating/extending.md for how to build a custom image.
 

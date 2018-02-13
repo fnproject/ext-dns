@@ -24,7 +24,7 @@ type Dns struct {
 }
 
 func (e *Dns) Name() string {
-	return "github.com/treeder/fn-ext-dns"
+	return "github.com/fnproject/ext-dns"
 }
 
 func (e *Dns) Setup(s fnext.ExtServer) error {
